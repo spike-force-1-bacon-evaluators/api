@@ -12,8 +12,8 @@ help:
 
 image: ## build docker image and push image to registry
 	@docker build -t alesr/bacon-api -f resources/prod/Dockerfile .
-	# @docker tag alesr/bacon-api alesr/bacon-api:latest
-	# @docker push alesr/bacon-api
+	@docker tag alesr/bacon-api alesr/bacon-api:latest
+	@docker push alesr/bacon-api
 
 run: ## deploy docker container
 	@docker run --rm -d --net baconnet -p 8080:8080 --name bacon-api alesr/bacon-api
